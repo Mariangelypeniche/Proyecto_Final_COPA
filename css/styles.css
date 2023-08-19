@@ -1,0 +1,472 @@
+/* En este archivo escriban su CSS */
+
+/* Fonts */
+/* Importar aquí la font */
+
+  /*@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,400;1,700&family=Pacifico&display=swap')*/
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,400;1,700&family=Pacifico&family=Ysabeau+Infant:ital,wght@1,1&display=swap');
+/* Aquí les dejamos como ayuda este "reset" en el cual ajustamos algunas propiedades
+*  cuyos valores asigna por defecto el navegador.
+*/
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Para que el scrolleo en la one page sea suave */
+    scroll-behavior: smooth;
+    
+    
+}
+
+body {
+    font-family: 'Ysabeau', 'Lato', sans-serif;
+    /*font-family: cursive;*/
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgb(116, 113, 113);
+    background-color:#fcb9fc;
+    /*background-image: url('https://i.pinimg.com/564x/8b/f1/f6/8bf1f69e54673103d05d027d4d34a129.jpg');*/
+}
+
+/* Para quitar los puntos a los items de listas */
+header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 120px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    box-shadow: 0 3px 10px -5px #5f5f5f;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaM2c8rPfWbXX8M3h7IAa-_nvyvcMoD1RkMg&usqp=CAU')
+    
+
+}
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position:relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    margin-top: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    animation: toggle__animation 3s infinite;
+  }
+  
+  .switch::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: blur(20px);
+    z-index: -1;
+    border-radius: 50px;
+    background-color: #d8ff99;
+    background-image: radial-gradient(at 21% 46%, hsla(183,65%,60%,1) 0px, transparent 50%),
+  radial-gradient(at 23% 25%, hsla(359,74%,70%,1) 0px, transparent 50%),
+  radial-gradient(at 20% 1%, hsla(267,83%,75%,1) 0px, transparent 50%),
+  radial-gradient(at 86% 87%, hsla(204,69%,68%,1) 0px, transparent 50%),
+  radial-gradient(at 99% 41%, hsla(171,72%,77%,1) 0px, transparent 50%),
+  radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fdfefedc;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.35em;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+       rgba(0, 0, 0, 0.09) 0px -1px 15px -8px;
+    background-color: #ff99fd;
+    background-image: radial-gradient(at 81% 39%, hsla(327,79%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 11% 72%, hsla(264,64%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 23% 20%, hsla(75,98%,71%,1) 0px, transparent 50%);
+  }
+  
+  .input__check:checked + .slider {
+    background-color: #17202A;
+  }
+  
+  .input__check:checked + .slider:before {
+    transform: translateX(1em);
+  }
+  
+  @keyframes toggle__animation {
+    0%, 100% {
+      transform: translateY(-10px) rotateX(15deg) rotateY(-20deg);
+    }
+  
+    50% {
+      transform: translateY(0px) rotateX(15deg) rotateY(-20deg);
+    }
+  }
+
+  
+
+#menu-btn{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+ 
+}
+
+#close-menu{
+    display: none;
+}
+
+#menu{
+    display: none;
+}
+nav{
+    display: none;
+    
+}
+
+body.mobile-menu-active{
+    overflow: hidden;
+
+}
+
+body.mobile-menu-active #close-menu{
+    display: block;
+
+    
+    
+    
+    
+    
+}
+
+body.mobile-menu-active #open-menu{
+    display: none;
+    
+
+}
+
+body.mobile-menu-active header{
+    height: 40%;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    transition: height 0.3s;
+    
+    
+    
+}
+
+body.mobile-menu-active nav{
+    display: block;
+    width: 100%;
+    height: 50%;
+    
+    
+
+}
+
+
+body.mobile-menu-active ul#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-around;
+    /*height: 20%;*/
+}
+
+ul {
+    list-style: none;
+
+}
+li {
+    display: inline-block;
+    margin-right: 80px;
+   
+
+    
+}
+
+
+li.menu-item:hover {
+    text-shadow: 2px 2px 4px #3a2a91;
+    transition: text-shadow 0.3s;
+    transform: scale(1.2);
+    
+    
+    
+}
+
+h1 {
+    font-size: 36px;
+    margin: 100px 0 20px 0;
+
+   
+}
+h2 {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+
+
+}
+h3{
+    font-size: 12px;
+    
+}
+
+
+/* Para que los enlaces hereden el color de texto y no tengan subrayado */
+a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+/* Este max-width es para que el contenido no se "estire" demasiado hacia los costados y
+*  el margin: auto; para tenerlo centrado fácilmente ;)
+*/
+main {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 100px 0 20px;
+    min-height: 100vh;
+    background-color: #dbe7f6;
+ 
+    
+        
+}
+
+.foto{
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+    
+}
+
+.boton{
+    display: inline-block;
+    border: 2px solid rgb(247, 243, 245);
+    padding: 15px;
+    color:rgb(247, 245, 245);
+    font-weight: 20px;
+    text-decoration: none;
+    background-color: #af599e;
+    border-radius: 25px;
+    font-size: 20px;
+    margin: 20px;
+}
+.boton:hover{
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+    background-color: #d8ff99;
+    transition: 1.2s;
+    color:#3a2a91;
+    transform: scale(1.2);
+}
+.hablemos{
+    display: inline-block;
+    background-color: rgba(89, 112, 175, 0.3);
+    border-radius: 15px 10px;
+    margin: 20px 0 50px 0;
+    padding: 20px;
+   
+    
+
+}
+.hablemos:hover{
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+    transition: 1.2s;
+    color:#3a2a91;
+    
+}
+
+
+.icons{
+    margin-bottom: 20px;
+    margin-top: 30px;
+    align-items: center;
+    display: inline-block;
+    margin-left: 10%;
+    position: relative;
+
+  
+}
+.correo:hover, .gatito:hover, .perfil:hover{
+    transform: scale(1.2);
+}
+
+
+#experiencia, #formacion {
+    display: inline-block;
+    background-color: rgba(89, 112, 175, 0.3);
+    border-radius: 15px 10px;
+    margin: 20px 0 50px 0;
+    padding: 20px;
+}
+#experiencia:hover, #formacion:hover{
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+     transition: 1.2s;
+    color:#3a2a91;
+        
+    
+
+}
+
+ #inicio, #experiencia, #formacion {
+    scroll-margin-top: 300px;  /* Ajusta el valor según sea necesario */
+}
+
+footer{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://i.pinimg.com/564x/8b/f1/f6/8bf1f69e54673103d05d027d4d34a129.jpg');
+    color: rgb(79, 77, 77);
+}
+[data-theme="dark"] *{
+    /* Estilos para el tema oscuro */
+
+    background-image: url('https://i.gifer.com/QGYO.gif');
+    background-color: #17202A;
+    color: #fcb9fc;
+
+  }
+  
+  [data-theme="light"] {
+    /* Estilos para el tema claro */
+    /*background-color:;*/
+    color: #000;
+  }
+.slidery{
+    width: 75vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slidery .slider-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: calc(200px * 14);
+}
+
+.slidery slide {
+    width: 200px;
+}
+
+.slider .slide img{
+    width: 100%;
+}
+
+@keyframes scroll{
+    0%  {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-200px * 7));
+        transform: translateX(calc(-200px * 7));
+    }
+}
+
+
+
+
+
+@media (min-width: 1024px) {
+section#inicio{
+    display: flex;
+    flex-direction: row;
+}
+
+article.presentacion{
+    text-align: left;
+    width: 50%;
+
+}
+h1 {
+    font-size: 25px;
+    text-align: left;
+
+}
+header{
+    font-size: 20px;
+}
+button#menu-btn {
+    display: none;
+}
+#menu {
+    display: flex;
+    flex-direction: row;
+
+  }
+nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+   
+}
+.icons {
+    display: block;
+    align-items: center;
+    margin-left: 100px;
+
+}
+}
+
+
+
+
+
+/* Recomendaciones! 
+*  - Comenzar desde lo más general y luego ir hacia lo mas específico, asignando primero
+*    "estilos generales". Una buena idea sería comenzar por el <body> ;)
+*
+*  - Recuerden que queremos evitar "repetir código", en CSS usando la cualidad de la herencia
+*    podemos setear ciertas propiedades en un elemento padre y dejar que sean heredadas (por ejemplo: font-size)
+*
+*  - Nadie sabe todas las propiedades CSS de memoria, si no saben como hacer algo no lo recuerdan, la respuesta
+*    pueden encontrarla buscando en la web algo como "CSS como hacer ... " o "propiedad css para hacer ..."
+*
+*  - Usen mucho las herramientas para desarrolladores del navegador para ir
+*    probando el CSS que escriben, resolver dudas y problemas.
+*
+*  - Paciencia, resiliencia y creatividad! No se desanimen, las primeras experiencias maquetando con HTML y CSS
+*    pueden ser frustrantes, pero estas habilidades se van desarrollando con la experiencia, es como aprender
+*    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
+*/
